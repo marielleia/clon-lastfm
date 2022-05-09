@@ -93,7 +93,7 @@ cuando hago click en el nombre del grupo
 
 ### Requisitos técnicos
 Sentíos libres de utilizar todo lo que habéis aprendido hasta ahora.
-Aunque deberíais utilizar las siguientes buenas prácticas:
+Sin embargo, sería interesante que siguieseis unas buenas prácticas de programación:
 - Procurad que las funciones de javaScript hagan una única cosa. Si necesitáis que una función realice varias tareas lo debería hacer llamando a otras funciones.
 - Utilizad nombres semánticos para todo: variables, funciones, objetos, arrays, etc.
 - Se pueden utilizar todos los ficheros, tanto de js como de css, que consideréis, si creeis que así mejorará el código y facilitará el desarrollo.
@@ -119,5 +119,13 @@ El proyecto estará finalizado cuando termine el desarrollo y las pruebas de tod
 Si os queda tiempo podéis implementar la carga de las canciones directamente desde la API de last.fm.
 
 # RECURSOS
-En el fichero style.scss se proporcionan
+En el fichero style.css se proporcionan colores, filtros e imágenes que necesitarás para el desarrollo.
 
+# ENTREGABLES
+- Vía slack se entregarán los siguientes artefactos:
+  - Kanban del proyecto.
+  - url del repositorio del proyecto.
+  - url de la gh-page.
+  - Documento resumen de la retrospectiva del primer sprint con los acuerdos alcanzados.
+
+- Se hará una retrospectiva general de todos los proyectos que servirá como entrega del ejercicio.
