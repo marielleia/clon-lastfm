@@ -101,16 +101,24 @@ Sin embargo, sería interesante que siguieseis unas buenas prácticas de program
 
 ### Desarrollo
 Incorporad las historias de usuario al backlog del kanban (Trello).
-Incorporad también otras historias que no sean de usuario pero que sean necesarias para el desarrollo. Ejemplo: pruebas de concepto (cosas nuevas), diseño general, desarrollo de estilos o el mismo análisis de las historias de usuario etc.
+
+Incorporad también otras historias que no sean de usuario pero que sean necesarias
+para el desarrollo.
+    Ejemplo: pruebas de concepto (cosas nuevas), diseño general, desarrollo de estilos o el mismo análisis de las historias de usuario etc.
+
 El desarrollo se realizará en dos sprints de unos 3-4 días cada uno.
-Deberéis seleccionar las historias que creéis que podéis abordar por sprint.
+    Deberéis seleccionar las historias que creéis que podéis abordar por sprint.
+
 Distribuid los roles scrum y las historias.
 Una vez seleccionadas las historias habrá que analizar qué tareas serán necesarias para realizar cada una de ellas, e incorporarlas al kanban (es buena idea hacerlo mediante checklist).
+
 Estas tareas se realizarán en la reunión de planificación del sprint.
 
 Durante las dailies deberéis abordar el avance del desarrollo. Tareas completadas, pendientes, bloqueos, etc.
+
 Las tareas se irán pasando de columna del kanban hasta el test y después el done.
 Sólo habrá una tarea activa por coder en el DOING
+
 Las tareas pasan al DONE cuando se han completado y testado.
 
 El proyecto estará finalizado cuando termine el desarrollo y las pruebas de todas las historias de usuario.
