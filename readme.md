@@ -66,30 +66,30 @@ Presta mucha atención a los estilos que se están aplicando:
 ### USER'STORIES
 
 como usuario
-QUIERO ver un listado de todas las canciones
-cuando cargo la página
-QUIERO ver un listado de todas las canciones
-cuando clico la opción overview
-QUIERO ver un listado de las diez canciones más escuchadas
-cuando clico la opción "Top 10 listened"
-QUIERO ver un listado con las canciones del artista más escuchado.
-cuando clico la opción The Biggest
-QUIERO ver un listado de canciones del género rock
-cuando clico la opción rock
-QUIERO ver un listado de canciones del género hip-hop
-cuando clico la opción hip-hop
-QUIERO ver un listado de canciones del género indie
-cuando clico la opción indie
-QUIERO ver un listado de canciones del género jazz
-cuando clico la opción jazz
-QUIERO ver un listado de canciones del género reggae
-cuando clico la opción reggae
-QUIERO que el elemento del menú cambie de estilo
-cuando tiene el foco.
-QUIERO que se abra la página de la canción
-cuando hago click en el nombre de la canción
-QUIERO que se abra la página del grupo
-cuando hago click en el nombre del grupo
+- QUIERO ver un listado de todas las canciones
+    cuando cargo la página
+- QUIERO ver un listado de todas las canciones
+    cuando clico la opción overview
+- QUIERO ver un listado de las diez canciones más escuchadas
+    cuando clico la opción "Top 10 listened"
+- QUIERO ver un listado con las canciones del artista más escuchado
+    cuando clico la opción The Biggest
+- QUIERO ver un listado de canciones del género rock.
+    cuando clico la opción rock
+- QUIERO ver un listado de canciones del género hip-hop
+    cuando clico la opción hip-hop
+- QUIERO ver un listado de canciones del género indie
+    cuando clico la opción indie
+- QUIERO ver un listado de canciones del género jazz
+    cuando clico la opción jazz
+- QUIERO ver un listado de canciones del género reggae
+    cuando clico la opción reggae
+- QUIERO que el elemento del menú cambie de estilo
+    cuando tiene el foco.
+- QUIERO que se abra la página de la canción
+    cuando hago click en el nombre de la canción
+- QUIERO que se abra la página del grupo
+    cuando hago click en el nombre del grupo
 
 ### Requisitos técnicos
 Sentíos libres de utilizar todo lo que habéis aprendido hasta ahora.
