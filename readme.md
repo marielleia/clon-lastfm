@@ -65,7 +65,7 @@ Presta mucha atención a los estilos que se están aplicando:
 
 ### USER'STORIES
 
-como usuario
+**COMO** usuario
 - QUIERO ver un listado de todas las canciones
     cuando cargo la página
 - QUIERO ver un listado de todas las canciones
