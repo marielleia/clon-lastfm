@@ -56,40 +56,71 @@ El formato del fichero es el siguiente:
 Clona la misma estructura que aparece en la animación: header, cuadros, menú, listado (éste último se cargará dinámicamente según la opción seleccionada)
 
 ### Estilos
-Presta mucha atención a los estilos que se están aplicando:
 
-- Cada estilo de música tiene un fondo de color, imagen y filtro (se facilitan en la hoja de estilos);
+- Los colores deberían ser uniformes, asocia los colores a variables css para utilizarlos. La lista de variables se facilita en la hoja de estilos.
+- Las imágenes utilizadas se facilitan en la hoja de estilos. Pero puedes utilizar las imágenes que quieras.
+- Cada imagen de los estilos de música debe tener aplicado un [filtro](https://developer.mozilla.org/es/docs/Web/CSS/filter) css, puedes seleccionar el que más te guste.
 - El logo del título se facilita en la hoja de estilos.
 - La lista no debe aparecer hasta que no se cargue la página. Mira la alternancia del fondo en cada una de las canciones.
 - Las canciones aparecen numeradas según su posición (usa la propiedad `step-counter` para pintar el número).
+- El icono del reproductor se puede llevar a cabo mediante una fuente de iconos.
 
 ### USER'STORIES
 
-**COMO** usuario
-- QUIERO ver un listado de todas las canciones
-    cuando cargo la página
-- QUIERO ver un listado de todas las canciones
-    cuando clico la opción overview
-- QUIERO ver un listado de las diez canciones más escuchadas
-    cuando clico la opción "Top 10 listened"
-- QUIERO ver un listado con las canciones del artista más escuchado
-    cuando clico la opción The Biggest
-- QUIERO ver un listado de canciones del género rock.
-    cuando clico la opción rock
-- QUIERO ver un listado de canciones del género hip-hop
-    cuando clico la opción hip-hop
-- QUIERO ver un listado de canciones del género indie
-    cuando clico la opción indie
-- QUIERO ver un listado de canciones del género jazz
-    cuando clico la opción jazz
-- QUIERO ver un listado de canciones del género reggae
-    cuando clico la opción reggae
-- QUIERO que el elemento del menú cambie de estilo
-    cuando tiene el foco.
-- QUIERO que se abra la página de la canción
-    cuando hago click en el nombre de la canción
-- QUIERO que se abra la página del grupo
-    cuando hago click en el nombre del grupo
+**User story 1**
+Dado que soy un usuario con conexión a internet y un navegador
+Cuando entro en la página LastFm.github.io
+Entonces puedo ver una lista de canciones más escuchadas del momento
+
+**User story 2**
+Dado que estoy en cualquier lugar de la web
+Cuando clico la opción "Overview" de la barra superior
+Entonces vuelvo a la página principal y puedo ver un listado de todas las canciones más escuchadas
+
+**User story 3**
+Dado que estoy en la web
+Cuando clico en la opción "Top 10 listened" de la barra superior
+Entonces puedo ver un listado con las 10 canciones más escuchadas
+
+**User story 4**
+Dado que estoy en la web
+Cuando clico en la opción "Rock" de la barra superior
+Entonces puedo ver un listado con las canciones más escuchadas del género rock
+
+**User story 5**
+Dado que estoy en la web
+Cuando clico en la opción "Hip-Hop" de la barra superior
+Entonces puedo ver un listado con las canciones más escuchadas del género hip-hop
+
+**User story 6**
+Dado que estoy en la web
+Cuando clico en la opción "Indie" de la barra superior
+Entonces puedo ver un listado con las canciones más escuchadas del género hip-hop
+
+**User story 7**
+Dado que estoy en la web
+Cuando clico en la opción "Jazz" de la barra superior
+Entonces puedo ver un listado con las canciones más escuchadas del género jazz
+
+**User story 8**
+Dado que estoy en la web
+Cuando clico en la opción "Reggae" de la barra superior
+Entonces puedo ver un listado con las canciones más escuchadas del género reggae
+
+**User story 9**
+Dado que estoy en la página y dispongo de un ratón o trackpad
+Cuando paso el cursor del ratón o trackpad por encima de la barra de menú
+Entonces la barra de menú cambia de estilo
+
+**User story 10**
+Dado que estoy en la página principal y veo una lista de canciones
+Cuando hago click en una de ellas
+Entonces se abre la página de la canción con toda su información
+
+**User story 11**
+Dado que estoy en la página principal y veo una lista de canciones con sus nombres de artistas
+Cuando hago click en el nombre del grupo o artista
+Entonces veo una página nueva con información sobre el grupo o artista
 
 ### Requisitos técnicos
 Sentíos libres de utilizar todo lo que habéis aprendido hasta ahora.
