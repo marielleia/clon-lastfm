@@ -67,57 +67,57 @@ Clona la misma estructura que aparece en la animación: header, cuadros, menú, 
 
 ### USER STORIES
 
-**User story 1**
+**User story 1**  
 Dado que soy un usuario con conexión a internet y un navegador  
 Cuando entro en la página LastFm.github.io  
 Entonces puedo ver una lista de canciones más escuchadas del momento  
 
-**User story 2**
+**User story 2**  
 Dado que estoy en cualquier lugar de la web  
 Cuando clico la opción "Overview" de la barra superior  
 Entonces vuelvo a la página principal y puedo ver un listado de todas las canciones más escuchadas  
 
-**User story 3**
+**User story 3**  
 Dado que estoy en la web  
 Cuando clico en la opción "Top 10 listened" de la barra superior  
 Entonces puedo ver un listado con las 10 canciones más escuchadas  
 
-**User story 4**
+**User story 4**  
 Dado que estoy en la web  
 Cuando clico en la opción "Rock" de la barra superior  
 Entonces puedo ver un listado con las canciones más escuchadas del género rock  
 
-**User story 5**
+**User story 5**  
 Dado que estoy en la web  
 Cuando clico en la opción "Hip-Hop" de la barra superior  
 Entonces puedo ver un listado con las canciones más escuchadas del género hip-hop  
 
-**User story 6**
+**User story 6**  
 Dado que estoy en la web  
 Cuando clico en la opción "Indie" de la barra superior  
 Entonces puedo ver un listado con las canciones más escuchadas del género hip-hop  
 
-**User story 7**
+**User story 7**  
 Dado que estoy en la web  
 Cuando clico en la opción "Jazz" de la barra superior  
 Entonces puedo ver un listado con las canciones más escuchadas del género jazz  
 
-**User story 8**
+**User story 8**  
 Dado que estoy en la web  
 Cuando clico en la opción "Reggae" de la barra superior  
 Entonces puedo ver un listado con las canciones más escuchadas del género reggae  
 
-**User story 9**
+**User story 9**  
 Dado que estoy en la página y dispongo de un ratón o trackpad  
 Cuando paso el cursor del ratón o trackpad por encima de la barra de menú  
 Entonces la barra de menú cambia de estilo  
 
-**User story 10**
+**User story 10**  
 Dado que estoy en la página principal y veo una lista de canciones  
 Cuando hago click en una de ellas  
 Entonces se abre la página de la canción con toda su información  
 
-**User story 11**
+**User story 11**  
 Dado que estoy en la página principal y veo una lista de canciones con sus nombres de artistas  
 Cuando hago click en el nombre del grupo o artista  
 Entonces veo una página nueva con información sobre el grupo o artista  
