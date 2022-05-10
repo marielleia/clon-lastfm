@@ -1,3 +1,114 @@
+* {
+margin: 0%;
+padding: 0%;
+text-decoration: none;
+box-sizing: border-box;
+}
+
+html{
+    height: auto;
+    width: auto;
+    font-family: "Open Sans","Lucida Grande","Helvetica Neue",Helvetica,Arial,Sans-serif;
+}
+
+/* --------------------------ENCABEZADO-----------------------------*/
+nav {
+    background-color: #222;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+}
+
+#logo {
+    width: 4em;
+}
+
+/*----------------------CAJAS CON IMAGENES-------------------------*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.lista-menu {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+}
+
+#rock, #hiphop, #indie, #jazz, #reggae {
+    width:50%;
+    height: 50%;
+    gap: 2%;
+    color: white;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: 2% auto;
+    border-radius: 2%;
+}
+
+#img_rock, #img_hiphop, #img_indie, #img_jazz, #img_reggae {
+    height: auto;
+    width: 100%;
+}
+
+#rock{   
+filter:sepia(90%);
+}
+#hiphop{
+filter:contrast(200%);
+}
+#indie{  
+filter:grayscale(50%);
+}
+
+#jazz{
+filter:hue-rotate(90deg);
+}
+
+#reggae{
+filter: saturate(10%);
+}
+
+div h3 {
+font-size: 0.9em;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+/*--------------LISTA OPCIONES---------*/
+.lista-opciones{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3%;
+}
+
+#btn-overview, #btn-top10, #btn-biggest {
+    font-size: 0.8em;
+    border-style: none;
+    background-color: #fff;
+    color: #222;
+    text-align: center;
+}
+
+/*------------------------TRACK DE CANCIONES----------------------*/
+.lista-canciones {
+    background-color: blue;
+    height: 60%;
+}
+
 /* Colores:
    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
