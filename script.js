@@ -1,69 +1,62 @@
-class Song {
-    constructor(){
-    }
+/* El div tracks-container es el único div que existe en el HTML */
+const tracksContainer = document.querySelector('.tracks-container');
 
-    setItemLi(){
-    }
-    setItemGroupName(group,url){
-    }
-    setItemSongTitle(title){
-    }
-    setListeners(listeners){
-    }
-    getNewElement(group,url,title,listeners){
-    }
-
-}
-initSongArray = async () => {
-    const {tracks} = await getTopTracks();
-
-    const arrayTracks = tracks.track.map(async (track) =>{
-       const info = await  getInfoTrack(track.name,track.artist.name)
-    //  console.log(info.track.toptags.tag)
-       track.genres = info.track.toptags.tag.map(e => e.name);
-       console.log(track);
-       return track;
-    })
-
-    const fullTracks = await Promise.all(arrayTracks)
-
-    return fullTracks;
-}
-const loadSongs = (tracks)=>{
-    // const ul = document.querySelector('ul');
-    // tracks.forEach(track => {
-    //     const li = document.createElement('li');
-    //     li.innerHTML=
-    //     `<span>${track.name}</span>
-    //     <a class="group-name" title="Play song" href=${track.url} target=_blank>play</a>
-    //     <span>${track.listeners}</span><span>${JSON.stringify(track.genres)}</span>`
-
-    //     ul.appendChild(li);
-    document.write(JSON.stringify(tracks))
-
-    // });
-
-}
-const loadOverview = () =>{
-}
-
-const loadTenListened = ()=>{
-
-}
-
-const loadBiggest = (e)=>{
-
-}
-
-const init = async ()=>{
-
-    // const {tracks} = await getTopTracks();
-    const tracks = await initSongArray();
-    console.log(tracks);
-    loadSongs(tracks);
-    // console.log(tracks.track);
-
-    }
+/* Fetch: Llamamos al json con el listado de canciones */
+fetch('music.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
 
 
-window.onload = init;
+/*fetchManyTracks: Nos permite llamar a la X número de veces para ver diferentes tracks 
+function fetchManyTracks(number) {
+    for (let i = 0; i <= number; i++) {
+        fetchOneTrack(i);
+    }}
+
+console.log(fetchOneTrack(1));
+
+//-------------------------create music list-----------------------//
+
+function createTrackLine(track) {
+
+//---------------------create line/div --------------------------//
+const card = document.createElement("div");
+card.classList.add("track-card");
+
+// llamar cancion//
+
+//imagen-container//
+const spriteContainer = document.createElement("div");
+spriteContainer.classList.add("img-container");
+
+//-----------------------imagen icono play-------------------------//
+const sprite = document.createElement("img");
+sprite.src = track.sprites.front_default;
+    
+//-------------------------nombre artista-------------------------//
+const artist = document.createElement("p");
+artist.classList.add("artist-name");
+artist.textContent = artist.charAt(0).toUpperCase() + artist.slice(1);
+
+//-------------------------nombre cancion-------------------------//
+const name = document.createElement("p");
+name.classList.add("song-name");
+name.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+
+//------------------------link a más info--------------------------//
+const aTag = document.createElement ('a');
+aTag.classList.add('link');
+aTag.setAttribute('href', 'music.html');
+aTag.textContent = "More info";
+    
+//Añadir elementos a la card//
+spriteContainer.appendChild(sprite);
+card.appendChild(spriteContainer);
+card.appendChild(artist);
+card.appendChild(name);
+card.appendChild(aTag);
+    
+tracksContainer.appendChild(card);
+
+fetchManyTracks(5);
+}*/
