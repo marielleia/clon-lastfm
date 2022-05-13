@@ -9,7 +9,9 @@ fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
   .then ((music) => { music.map((music) => { 
       const row = document.createElement('tr'); 
       row.innerHTML += 
-      ` <td>${music.artist.name}</td> 
+
+      ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+        <td>${music.artist.name}</td> 
         <td>${music.name}</td> 
         <td>${music.listeners}</td>`;
         tabla.appendChild(row); 
