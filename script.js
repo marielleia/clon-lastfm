@@ -24,37 +24,59 @@ traerMusica();
                 let showData = JSON.stringify(listaDeMusica);
        document.querySelector(".tracks-container").innerHTML = showData;
 
-//Filtrar las canciones más escuchadas del momento
+//PRUEBAS, NO FUNCIONAN TODAVIA//
+//-----Filtrar las canciones más escuchadas del momento------------------//
 
 let btnTop10 = document.getElementById("btn-top10");
-
-btnTop10.onclick = () => {
-function findTopListened (array){
-        if (array.length===0){
-            return undefined;
+btnTop10.onmouseover = () => {
+    document.querySelector("top10list").classList="btn-top10"
 }
-let topListened="";
-for (let i=0; i<array.length; i++) {
-    if(array[i].length > topListened.length||0)
-    topListened = array [i];
- }
- document.write(findTopListened);
-}}
 
-//-------------------indie----------------------------//
-let indie = document.querySelector("#indie")
-indie.addEventListener("click", listaIndie);
+function findTop10 (music){
+let top10 = findTop10.sort(function (a,b) {return b-a;}).slice(0,10);
+console.log(findTop10);}
 
-function listaIndie(){
+
+/*//H7-------------------filtro de musica jazz----------------------------//
+let jazz = document.querySelector("#jazz")
+jazz.addEventListener("click", listaJazz);
+
+/*function listaJazz(){
    fetch("music.json")
    .then(res => res.json())
-   .then(function(data){
+   .then(function(music){
        let html="";
-       let indieArray= data.filter(song => song.genres.includes("indie") )
-       indieArray.forEach(song => {
-           html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+       let jazzArray= music.filter(music => music.genres.includes("jazz") )
+       jazzArray.forEach(music => {
+           html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${music.artist.url}> ${music.artist.name} 
+           </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a>
+            </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
        });
-       document.querySelector(".songs").innerHTML=html;
+       document.querySelector(".music").innerHTML=html;
        })
        
    };
+
+   function traerListaJazz() { 
+fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
+ .then(response => response.json())
+ .then (checkJazzList)  (music.filter(checkJazzList)
+        function checkJazzList(music) {
+        return music.genres.includes("jazz")})
+ }
+ .then ((music) => { music.map((music) => { 
+    const row = document.createElement('tr'); 
+    row.innerHTML += 
+
+    ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+      <td>${music.artist.name}</td> 
+      <td>${music.name}</td> 
+      <td>${music.listeners}</td>`;
+      tabla.appendChild(row); 
+  });
+}) 
+} 
+traerMusica();
+
+              let showJazzData = JSON.stringify(listaDeMusica);
+     document.querySelector(".tracks-container").innerHTML = showJazzData;*/

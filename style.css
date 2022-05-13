@@ -59,24 +59,21 @@ main {
     height: auto;
     width: 100%;
 }
+/*filtros*/
+#img_rock {filter:sepia(100%);}
+#img_hiphop {filter:contrast(180%);}
+#img_indie {filter:grayscale(50%);}
+#img_jazz {filter:hue-rotate(180deg);}
+#img_reggae {filter: saturate(50%);}
 
-#rock{   
-filter:sepia(90%);
-}
-#hiphop{
-filter:contrast(200%);
-}
-#indie{  
-filter:grayscale(50%);
-}
-
-#jazz{
-filter:hue-rotate(90deg);
+h3:hover {
+    color: #f2f2f2;
+    text-decoration: underline;
 }
 
-#reggae{
-filter: saturate(10%);
-}
+#img_rock:hover, #img_hiphop:hover, #img_indie:hover, #img_jazz:hover, #img_reggae:hover {
+filter: grayscale(1) brightness(40%);
+    }
 
 div h3 {
 font-size: 0.9em;
@@ -86,7 +83,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-/*--------------LISTA OPCIONES---------*/
+/*----------------------------LISTA OPCIONES-----------------------*/
 .lista-opciones{
     width: 50%;
     display: flex;
@@ -101,6 +98,11 @@ transform: translate(-50%, -50%);
     background-color: #fff;
     color: #222;
     text-align: center;
+    padding: 2%;
+}
+
+#btn-overview:hover, #btn-top10:hover, #btn-biggest:hover {
+    color: #B90000;
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
@@ -112,11 +114,13 @@ table {
     width: 100%;
 }
 tr:nth-child(odd) { 
-    background-color: #f2f2f2; } 
+    background-color: #f2f2f2;
+} 
 
 th {
     font-size: 1.2em;
     text-align: center;
+    counter-increment: step-counter;
 }    
 tr { 
     font-size: 0.85em;
