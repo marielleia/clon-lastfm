@@ -28,17 +28,30 @@ traerMusica();
 //-----Filtrar las canciones más escuchadas del momento------------------//
 
 let btnTop10 = document.getElementById("btn-top10");
-btnTop10.onmouseover = () => {
-    document.querySelector("top10list").classList="btn-top10"
-}
 
+function getMinMax (arr){
+    let maximum = Math.max(arr);
+    let minimum = Math.min(arr);
+    let result = ([maximum, minimum]);
+    return result;
+};
+
+
+
+
+
+
+/*
 function findTop10 (music){
 let top10 = findTop10.sort(function (a,b) {return b-a;}).slice(0,10);
 console.log(findTop10);}
 
+btnTop10.onclick = () => {
+    document.querySelector("top10list").classList="btn-top10"
+}
 
-/*//H7-------------------filtro de musica jazz----------------------------//
-let jazz = document.querySelector("#jazz")
+///H7-------------------filtro de musica jazz----------------------------//
+/*let jazz = document.querySelector("#jazz")
 jazz.addEventListener("click", listaJazz);
 
 /*function listaJazz(){
