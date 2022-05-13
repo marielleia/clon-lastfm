@@ -26,3 +26,35 @@ traerMusica();
 
 //Filtrar las canciones más escuchadas del momento
 
+let btnTop10 = document.getElementById("btn-top10");
+
+btnTop10.onclick = () => {
+function findTopListened (array){
+        if (array.length===0){
+            return undefined;
+}
+let topListened="";
+for (let i=0; i<array.length; i++) {
+    if(array[i].length > topListened.length||0)
+    topListened = array [i];
+ }
+ document.write(findTopListened);
+}}
+
+//-------------------indie----------------------------//
+let indie = document.querySelector("#indie")
+indie.addEventListener("click", listaIndie);
+
+function listaIndie(){
+   fetch("music.json")
+   .then(res => res.json())
+   .then(function(data){
+       let html="";
+       let indieArray= data.filter(song => song.genres.includes("indie") )
+       indieArray.forEach(song => {
+           html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+       });
+       document.querySelector(".songs").innerHTML=html;
+       })
+       
+   };
