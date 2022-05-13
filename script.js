@@ -1,7 +1,7 @@
 /* El div tracks-container es el único div que existe en el HTML */
 const tracksContainer = document.querySelector('.tracks-container');
 
-/* Fetch: Llamamos al json con el listado de canciones */
+// Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
 const tabla = document.querySelector('.trackstable'); 
     function traerMusica() { 
 fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
@@ -22,3 +22,6 @@ traerMusica();
 
                 let showData = JSON.stringify(listaDeMusica);
        document.querySelector(".tracks-container").innerHTML = showData;
+
+//Filtrar las canciones más escuchadas del momento
+
