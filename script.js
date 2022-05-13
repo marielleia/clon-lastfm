@@ -13,8 +13,8 @@ fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
 
       ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
         <td>${music.artist.name}</td> 
-        <td>${music.name}</td> 
-        <td>${music.listeners}</td>`;
+        <td><b>${music.name}</b></td> 
+        <td>${music.listeners} listeners</td>`;
         tabla.appendChild(row); 
     });
  }) 

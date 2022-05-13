@@ -8,6 +8,7 @@ box-sizing: border-box;
 html{
     height: auto;
     width: auto;
+    margin: auto;
     font-family: "Open Sans","Lucida Grande","Helvetica Neue",Helvetica,Arial,Sans-serif;
 }
 
@@ -110,28 +111,48 @@ transform: translate(-50%, -50%);
     background-color: #fff;
     height: 60%;
 }
+
+h2 {
+    padding: 2%;
+}
 table {
     width: 100%;
+
 }
 tr:nth-child(odd) { 
     background-color: #f2f2f2;
 } 
 
-th {
-    font-size: 1.2em;
-    text-align: center;
-    counter-increment: step-counter;
-}    
 tr { 
     font-size: 0.85em;
-    text-align: center;
+gap:unset;
+}
+
+td:nth-child(2) {
+width: 20%;
+}
+
+td:nth-child(3) {
+    width: 50%;
+}
+
+td:nth-child(4) {
+    width: 30%;
+    text-align:end;
+    padding-right: 1em;
 }
 
 #icon {
     width: 2em;
     height: 2em;
-    display: flex;
-    align-items: center;
+}
+
+.music.artist.name {
+text-align: right;
+}
+
+.music.name {
+    text-align: start;
 }
 
 /* Colores:
