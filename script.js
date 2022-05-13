@@ -1,5 +1,6 @@
 /* El div tracks-container es el único div que existe en el HTML */
 const tracksContainer = document.querySelector('.tracks-container');
+window.addEventListener("load",traerMusica);
 
 // Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
 const tabla = document.querySelector('.trackstable'); 
