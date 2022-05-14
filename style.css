@@ -108,7 +108,7 @@ transform: translate(-50%, -50%);
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
-.lista-canciones {
+.lista-overview {
     background-color: #fff;
     height: 60%;
 }
@@ -199,3 +199,30 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
+/*MODO TOP LISTENED
+.overview {
+    background-color: black;
+    color: white;
+}
+
+.top10 {
+
+}
+
+.biggest {
+
+}
+
+.top10Table {
+display: none;
+}
+
+.overviewTable {
+display: none;
+}
+
+.biggestTable {
+display: none;
+}
+
+*/
