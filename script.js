@@ -34,19 +34,13 @@ fetch('music.json')
         tablaOverview.appendChild(row); 
     });
 
- })
-//let showData = JSON.stringify();
-//document.querySelector(".lista-overview").innerHTML = showData;
-    }
-                
-
+ })}
 
 //PRUEBAS, NO FUNCIONAN TODAVIA//
 //-----Filtrar las canciones más escuchadas del momento------------------//
 
 
 //evento click en botones//
-
 
 /*
 btnOverview.onclick = ()=> {
