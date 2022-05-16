@@ -104,17 +104,12 @@ transform: translate(-50%, -50%);
 }
 
 #btn-overview:hover, #btn-top10:hover, #btn-biggest:hover {
-    color: #B90000;
+    color: #f40a68;
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
-<<<<<<< HEAD
-.lista-canciones {
-    background-color: lightskyblue;
-=======
 .lista-overview {
     background-color: #fff;
->>>>>>> ed86e35e6f8bbe2d5c13c76894572777382b0a24
     height: 60%;
 }
 
@@ -126,7 +121,7 @@ table {
 
 }
 tr:nth-child(odd) { 
-    background-color: #f2f2f2;
+    background-color: #f7c0d9;
 } 
 
 tr { 
@@ -204,30 +199,11 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
-/*MODO TOP LISTENED
-.overview {
-    background-color: black;
-    color: white;
+/*MODO VISIBLE*/
+.visible {
+display:block;
 }
 
-.top10 {
-
-}
-
-.biggest {
-
-}
-
-.top10Table {
+.invisible {
 display: none;
 }
-
-.overviewTable {
-display: none;
-}
-
-.biggestTable {
-display: none;
-}
-
-*/
