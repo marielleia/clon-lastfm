@@ -15,14 +15,15 @@ let h2Overview = document.querySelector("#subtituloO");
 let h2Top10 = document.querySelector("#subtitulo10");
 let h2OBiggest = document.querySelector("#subtituloB");
 
-window.addEventListener("load",traerMusica);
+
 
 // Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
 
-    function traerMusica() { 
-fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
-  .then(response => response.json())
-  .then ((music) => {music.map((music) => { 
+function traerMusica() { 
+   fetch('music.json')
+  .then(response => response.json()).then ((music) => {
+      music.sort((a,b) => b.listeners-a.listeners);
+      music.map((music) => { 
       const row = document.createElement('tr'); 
       row.innerHTML += 
       ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
@@ -31,21 +32,46 @@ fetch('http://127.0.0.1:5500/clon-lastfm/music.json')
         <td>${music.listeners} listeners</td>`;
         tablaOverview.appendChild(row); 
     });
- })
+
+})}
+
+window.addEventListener("load",traerMusica)
+
+//intentando filtrar por genero (ROCK) 
+function traerRock(){
+    fetch('music.json')
+    .then(response => response.json())
+    .then(music =>  {
+    let listaRock = 'rock'; 
+    const resultado = music.filter((cancion => {
+        cancion.genres === listaRock
+          console.log(cancion)}))
+    })}
 
 
-/*let showData = JSON.stringify(listaMusica);
-document.querySelector(".lista-overview").innerHTML = showData;
-traerMusica();}*/
-                
+traerRock()
 
+
+
+/*function seleccionarPorGenero (){
+    fetch('music.json')
+    .then(response => response.json())
+    .then ((music) => {
+        music.forEach(object =>{
+            if(music.genres === ["rock"]){
+                console.log(music.name);
+            }
+        });
+        
+    }
+    )
+}*/
 
 //PRUEBAS, NO FUNCIONAN TODAVIA//
 //-----Filtrar las canciones más escuchadas del momento------------------//
 
 
 //evento click en botones//
-
 
 /*
 btnOverview.onclick = ()=> {
@@ -76,11 +102,13 @@ btnTop10.addEventListener("click", showTop10);
             .then(response => response.json())
             .then (function (music) {
                 let top10 = "";
-                let showTop10 = music.listeners.sort((a,b) => a-b).slice(0,10); //sort sirve para filtrar
+                let showTop10 = music.sort((a,b) => a.listeners-b.listeners).slice(0,10); //sort sirve para filtrar
                 document.querySelector(".trackstable").innerHTML = top10;
-                        shopListaTop10();}
-                )}
-    
+                        shopListaTop10();
+                        console.log(showTop10);
+            })}
+   */         
+   
 
     ///H7-------------------filtro de musica jazz----------------------------//
 /*let jazz = document.querySelector("#jazz")
@@ -125,3 +153,4 @@ traerMusica();
 
               let showJazzData = JSON.stringify(listaDeMusica);
      document.querySelector(".tracks-container").innerHTML = showJazzData;*/
+
