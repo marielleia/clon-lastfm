@@ -199,30 +199,11 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
-/*MODO TOP LISTENED
-.overview {
-    background-color: black;
-    color: white;
+/*MODO VISIBLE*/
+.visible {
+display:block;
 }
 
-.top10 {
-
-}
-
-.biggest {
-
-}
-
-.top10Table {
+.invisible {
 display: none;
 }
-
-.overviewTable {
-display: none;
-}
-
-.biggestTable {
-display: none;
-}
-
-*/
