@@ -12,6 +12,8 @@ let h2Overview = document.querySelector("#subtituloO");
 let h2Top10 = document.querySelector("#subtitulo10");
 let h2OBiggest = document.querySelector("#subtituloB");
 
+let rock = document.querySelector("#rock");
+
 let music = [];
 
 // Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
@@ -31,7 +33,9 @@ function traerMusica() {
             <td><a href=${music.artist.url}>${music.artist.name}</a></td>
             <td><a href=${music.url}><b>${music.name}</b></a></td>
             <td>${music.listeners} listeners</td>`;
-        tablaOverview.appendChild(row); 
+        tablaOverview.appendChild(row);
+        listaTop10.classList=("invisible");
+        listaBiggest.classList=("invisible");
     });
  })};
 
@@ -40,12 +44,13 @@ function traerMusica() {
  let listaTop10 = document.querySelector(".lista-top10");
  let listaBiggest = document.querySelector(".lista-biggest");
  
+ //overview//
  btnOverview.onclick = ()=> {
      listaOverview.classList=("visible");
      listaTop10.classList=("invisible");
      listaBiggest.classList=("invisible");
     }
-
+//top10//
 btnTop10.onclick = ()=> {
         music
         .slice(0,9)
@@ -61,7 +66,8 @@ btnTop10.onclick = ()=> {
         listaOverview.classList=("invisible");
         listaBiggest.classList=("invisible");
         });}
-    
+
+//biggest//
 btnBiggest.onclick  = ()=> {
         music
         .filter(music=>music.artist.name === "Radiohead")
