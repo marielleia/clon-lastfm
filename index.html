@@ -8,16 +8,12 @@
     <title>clon-last.fm</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<<<<<<< HEAD
-=======
-
->>>>>>> 88901dc0bed96c1acbee5067c85f06020e75b531
 <body>
 <!-------------------------------ENCABEZADO----------------------------->
 <header>
     <nav>
 <!----------------------------------LOGO-------------------------------->
-        <img id="logo" src="https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png" alt="logo-lastfm">
+        <a href="https://www.last.fm/" target="_blank"><img id="logo" src="https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png" alt="logo-lastfm"></a>
     </nav>
     
 
@@ -27,28 +23,28 @@
 
             <div id="rock">
                 <img id="img_rock" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg" alt="foto-rock">
-                <h3>rock</h3>
+                <h3 id="title_rock">rock</h3>
             </div>
 
             <div id="hiphop">
                 <img id="img_hiphop" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg"
                 alt="foto-hiphop">
-                <h3>hip-hop</h3>
+                <h3 id="title_hiphop">hip-hop</h3>
             </div>
 
             <div id="indie">
                 <img id="img_indie"src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg" alt="foto-indie">
-                <h3>indie</h3>
+                <h3 id="title_indie">indie</h3>
             </div>
 
             <div id="jazz">
                 <img id="img_jazz" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg" alt="foto-jazz">
-                <h3>jazz</h3>
+                <h3 id="title_jazz">jazz</h3>
             </div>
 
             <div id="reggae">
                 <img id="img_reggae" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg" alt="foto-reggae">
-                <h3>reggae</h3>
+                <h3 id="title_reggae">reggae</h3>
             </div>
 
         </section>
@@ -63,24 +59,27 @@
 
 <!--------------------TRACK DE CANCIONES------------>
 
-<section class="lista-canciones">
-<h2>Overview</h2>
-lista de canciones
+<section class="lista-overview">
+    <h2 id="subtituloO">Overview</h2>
+        <table>
+            <tbody class= "tracksTable1"></tbody>
+        </table>
 </section>
-<div class = "tracks-container"></div>
-<table>
-    <thead>
-        <tr>
-            <th> icono </th>
-            <th> artista </th>
-            <th> cancion </th>
-            <th> reproducido </th>
-        </tr>
-    </thead>
-    <tbody class= "trackstable">
-            
-    </tbody>
-</table>
+
+<section class="lista-top10">
+    <h2 id="subtitulo10">Top 10 Listened</h2>
+    <table>
+        <tbody class= "tracksTable2"></tbody>
+    </table>
+</section>
+
+<section class="lista-biggest">
+    <h2 id="subtituloB">The Biggest</h2>
+    <table>
+        <tbody class= "tracksTable3"></tbody>
+    </table>
+
+</section>
     <script src="script.js"></script>
 </body>
 </html>

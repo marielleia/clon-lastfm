@@ -8,7 +8,8 @@ box-sizing: border-box;
 html{
     height: auto;
     width: auto;
-    font-family: "Open Sans","Lucida Grande","Helvetica Neue",Helvetica,Arial,Sans-serif;
+    margin: auto;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* --------------------------ENCABEZADO-----------------------------*/
@@ -59,34 +60,31 @@ main {
     height: auto;
     width: 100%;
 }
+/*filtros*/
+#img_rock {filter:sepia(100%);}
+#img_hiphop {filter:contrast(180%);}
+#img_indie {filter:grayscale(50%);}
+#img_jazz {filter:hue-rotate(180deg);}
+#img_reggae {filter: saturate(50%);}
 
-#rock{   
-filter:sepia(90%);
-}
-#hiphop{
-filter:contrast(200%);
-}
-#indie{  
-filter:grayscale(50%);
-}
-
-#jazz{
-filter:hue-rotate(90deg);
+h3:hover {
+    color: #f2f2f2;
+    text-decoration: underline;
 }
 
-#reggae{
-filter: saturate(10%);
+#img_rock:hover, #img_hiphop:hover, #img_indie:hover, #img_jazz:hover, #img_reggae:hover {
+filter: grayscale(1) brightness(40%);
 }
 
 div h3 {
-font-size: 0.9em;
+font-size: 1em;
 position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
 
-/*--------------LISTA OPCIONES---------*/
+/*----------------------------LISTA OPCIONES-----------------------*/
 .lista-opciones{
     width: 50%;
     display: flex;
@@ -96,17 +94,78 @@ transform: translate(-50%, -50%);
 }
 
 #btn-overview, #btn-top10, #btn-biggest {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 0.8em;
     border-style: none;
     background-color: #fff;
     color: #222;
     text-align: center;
+    padding: 2%;
+}
+
+#btn-overview:hover, #btn-top10:hover, #btn-biggest:hover {
+    color: #B90000;
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
+<<<<<<< HEAD
 .lista-canciones {
     background-color: lightskyblue;
+=======
+.lista-overview {
+    background-color: #fff;
+>>>>>>> ed86e35e6f8bbe2d5c13c76894572777382b0a24
     height: 60%;
+}
+
+h2 {
+    padding: 2%;
+}
+table {
+    width: 100%;
+
+}
+tr:nth-child(odd) { 
+    background-color: #f2f2f2;
+} 
+
+tr { 
+    font-size: 0.85em;
+    gap:unset;
+}
+
+td:nth-child(1) {
+    width: 10%;
+    text-align: center;
+}
+
+td:nth-child(2) {
+    width: 20%;
+    padding-left: 0.5em;
+}
+
+td:nth-child(3) {
+    width: 35%;
+    padding-left: 0.5em;
+}
+
+td:nth-child(4) {
+    width: 35%;
+    text-align:end;
+    padding-right: 2em;
+}
+
+#icon {
+    width: 2em;
+    height: 2em;
+}
+
+.music.artist.name {
+text-align: right;
+}
+
+.music.name {
+    text-align: start;
 }
 
 /* Colores:
@@ -145,3 +204,30 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
+/*MODO TOP LISTENED
+.overview {
+    background-color: black;
+    color: white;
+}
+
+.top10 {
+
+}
+
+.biggest {
+
+}
+
+.top10Table {
+display: none;
+}
+
+.overviewTable {
+display: none;
+}
+
+.biggestTable {
+display: none;
+}
+
+*/
