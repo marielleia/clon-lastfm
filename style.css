@@ -104,7 +104,7 @@ transform: translate(-50%, -50%);
 }
 
 #btn-overview:hover, #btn-top10:hover, #btn-biggest:hover {
-    color: #B90000;
+    color: #f40a68;
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
@@ -121,7 +121,7 @@ table {
 
 }
 tr:nth-child(odd) { 
-    background-color: #f2f2f2;
+    background-color: #f7c0d9;
 } 
 
 tr { 
