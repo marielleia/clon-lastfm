@@ -58,8 +58,9 @@ btnOverview.onclick = ()=> {
     
     */
    btnTop10.onclick = ()=> {
-        listaTop10.classList=("top10");
-        music.map((music) => { 
+        music
+        .slice(0,9)
+        .map((music) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
                 ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
@@ -68,19 +69,18 @@ btnOverview.onclick = ()=> {
                 <td>${music.listeners} listeners</td>`;
             tablaTop10.appendChild(row); 
         });}
-
-
-        /*document.querySelector(".lista-top10").classList= "top10Table";
-        document.querySelector(".lista-overview").classList.remove = "overviewTable";
-        document.querySelector(".lista-biggest").classList.remove = "biggestTable";
-    }
     
     btnBiggest.onclick  = ()=> {
-        listaBigge
-        st.classList=("biggest");
-        document.querySelector(".lista-biggest").classList = "biggestTable";
-        document.querySelector(".lista-top10").classList.remove = "top10Table"
-        document.querySelector(".lista-overview").classList.remove = "overviewTable";
-    }
-    */
+        music
+        .filter(music=>music.artist.name === "Radiohead")
+        .map((music) => { 
+            const row = document.createElement('tr'); 
+            row.innerHTML += 
+                ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+                <td><a href=${music.artist.url}>${music.artist.name}</a></td>
+                <td><a href=${music.url}><b>${music.name}</b></a></td>
+                <td>${music.listeners} listeners</td>`;
+            tablaBiggest.appendChild(row); 
+        });}
+    
     window.addEventListener("load",traerMusica);
