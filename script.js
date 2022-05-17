@@ -10,14 +10,16 @@ let tablaBiggest = document.querySelector('.tracksTable3');
 
 let h2Overview = document.querySelector("#subtituloO");
 let h2Top10 = document.querySelector("#subtitulo10");
-let h2OBiggest = document.querySelector("#subtituloB"); 
+let h2OBiggest = document.querySelector("#subtituloB");
+
+let genres = document.querySelector(".generos");
 
 
 
 let music = [];
 
 // Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
-//overview //
+//-------------------------OVERVIEW-------------------------- //
 function traerMusica() {
     fetch('music.json')
     .then(response => response.json())
@@ -36,21 +38,23 @@ function traerMusica() {
         tablaOverview.appendChild(row);
         listaTop10.classList=("invisible");
         listaBiggest.classList=("invisible");
+        genres.classList=("invisible");
     });
  })};
 
- //evento click en botones//
+
  let listaOverview = document.querySelector(".lista-overview");
  let listaTop10 = document.querySelector(".lista-top10");
  let listaBiggest = document.querySelector(".lista-biggest");
  
- //overview//
+ //--------------------OVERVIEW-----------------------------------//
  btnOverview.onclick = ()=> {
      listaOverview.classList=("visible");
      listaTop10.classList=("invisible");
      listaBiggest.classList=("invisible");
+     genres.classList=("invisible");
     }
-//top10//
+//--------------------TOP 10 LISTENERS---------------------------//
 btnTop10.onclick = ()=> {
         music
         .slice(0,9)
@@ -65,9 +69,10 @@ btnTop10.onclick = ()=> {
         listaTop10.classList=("visible");
         listaOverview.classList=("invisible");
         listaBiggest.classList=("invisible");
+        genres.classList=("invisible");
         });}
 
-//biggest//
+//------------------THE BIGGEST-------------------------------//
 btnBiggest.onclick  = ()=> {
         music
         .filter(music=>music.artist.name === "Radiohead")
@@ -82,27 +87,30 @@ btnBiggest.onclick  = ()=> {
             listaTop10.classList=("invisible");
             listaOverview.classList=("invisible");
             listaBiggest.classList=("visible");
+            genres.classList=("invisible");
         });}
     
         
-        //rock 
-        let rock = document.querySelector("#rock");
-        let botonRock = document.querySelector("#title_rock");
-        let tablaRock = document.querySelector("#tracksTable4"); 
-let listaRock = document.querySelector("#lista-rock");
+//--------------------ROCK -------------------------------// 
+let rock = document.querySelector("#rock");
+let botonRock = document.querySelector("#title_rock");
+let listaRock = document.querySelector(".lista-rock");
+let tablaRock = document.querySelector(".tracksTable4");
 
-title_rock.onclick  = ()=> {
+botonRock.onclick  = ()=> {
     music
     .filter(music=>music.genres === "rock")
+    console.log("Hola,esto funciona?")
     .map((music) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
         <td><a href=${music.artist.url}>${music.artist.name}</a></td>
         <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
-            tablaRock.appendChild(row); 
-            listaRock.classList=("visible");
-        })}
+        <td>${music.listeners} listeners</td>`;
+        tablaRock.appendChild(row);
+        listaRock.classList=("visible");
+    //genres.classList=("invisible");
+    })}
 
-        window.addEventListener("load",traerMusica); 
+window.addEventListener("load",traerMusica); 
