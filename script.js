@@ -96,7 +96,7 @@ btnBiggest.onclick  = ()=> {
         });}
     
         
-//--------------------ROCK -------------------------------//
+//-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
 
 let rock = document.querySelector(".rock");
@@ -104,21 +104,21 @@ let botonRock = document.querySelector(".title_rock");
 let listaRock = document.querySelector(".lista-rock");
 let tablaRock = document.querySelector(".tracksTable4");
 
-botonRock.onclick  = ()=> {
+rock.onclick  = ()=> {
     music
-    .filter(music=>music.genres === "rock")
-    .map((music) => { 
+    //.filter(music=>music.genres === "rock")
+    console.log ("hola, esto funciona?")
+    music.map((music) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
-            ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
-        tablaRock.appendChild(row); 
-        listaRock.classList=("visible");
-        tracks.classList=("invisible");
-    })}
-
+        ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+        <td><a href=${music.artist.url}>${music.artist.name}</a></td>
+        <td><a href=${music.url}><b>${music.name}</b></a></td>
+        <td>${music.listeners} listeners</td>`;
+        tablaRock.appendChild(row);
+       // listaRock.classList=("visible");
+       // tracks.classList=("invisible");
+    })};
 
 //evento al cargar la página//
 window.addEventListener("load",traerMusica); 
