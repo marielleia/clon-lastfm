@@ -3,6 +3,9 @@ let btnTop10 = document.querySelector("#btn-top10");
 let btnOverview = document.querySelector("#btn-overview");
 let btnBiggest = document.querySelector("#btn-biggest");
 
+let listaOverview = document.querySelector(".lista-overview");
+let listaTop10 = document.querySelector(".lista-top10");
+let listaBiggest = document.querySelector(".lista-biggest");
 
 let tablaOverview = document.querySelector('.tracksTable1');
 let tablaTop10 = document.querySelector('.tracksTable2'); 
@@ -13,17 +16,17 @@ let h2Top10 = document.querySelector("#subtitulo10");
 let h2OBiggest = document.querySelector("#subtituloB");
 
 let genres = document.querySelector(".generos");
-
-
+let tracks = document.querySelector(".tracks");
 
 let music = [];
 
-// Aquí llamamos al json con el listado de canciones y lo mostramos en una tabla
 //-------------------------OVERVIEW-------------------------- //
+
 function traerMusica() {
+// Aquí llamamos al json con fetch//    
     fetch('music.json')
     .then(response => response.json())
-    
+// y lo mostramos en una tabla donde se ve el nombre, artista y nº listeners de todas las canciones//    
     .then ((result) => {
         music = result.sort((a,b) => b.listeners-a.listeners);  
         console.log("we enter the fetch music func")
@@ -36,18 +39,16 @@ function traerMusica() {
             <td><a href=${music.url}><b>${music.name}</b></a></td>
             <td>${music.listeners} listeners</td>`;
         tablaOverview.appendChild(row);
+//aqui hacemos que los elementos/secciones no se vean cuando cargamos la página//
         listaTop10.classList=("invisible");
         listaBiggest.classList=("invisible");
         genres.classList=("invisible");
     });
  })};
 
-
- let listaOverview = document.querySelector(".lista-overview");
- let listaTop10 = document.querySelector(".lista-top10");
- let listaBiggest = document.querySelector(".lista-biggest");
  
- //--------------------OVERVIEW-----------------------------------//
+ //-----------------------OVERVIEW-----------------------------------//
+ //Aqui hacemos que al clicar el boton Overview solamente sea visible la lista Overview//
  btnOverview.onclick = ()=> {
      listaOverview.classList=("visible");
      listaTop10.classList=("invisible");
@@ -55,6 +56,7 @@ function traerMusica() {
      genres.classList=("invisible");
     }
 //--------------------TOP 10 LISTENERS---------------------------//
+ //Aqui hacemos que al clicar el boton Top 10 Listeners solamente sea visible la lista top 10 y se oculten las demás secciones.//
 btnTop10.onclick = ()=> {
         music
         .slice(0,9)
@@ -73,6 +75,8 @@ btnTop10.onclick = ()=> {
         });}
 
 //------------------THE BIGGEST-------------------------------//
+ //Aqui hacemos que al clicar el boton The biggest solamente sea visible la lista The biggest y se oculten las demás secciones.//
+
 btnBiggest.onclick  = ()=> {
         music
         .filter(music=>music.artist.name === "Radiohead")
@@ -91,7 +95,9 @@ btnBiggest.onclick  = ()=> {
         });}
     
         
-//--------------------ROCK -------------------------------// 
+//--------------------ROCK -------------------------------//
+ //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
+
 let rock = document.querySelector("#rock");
 let botonRock = document.querySelector("#title_rock");
 let listaRock = document.querySelector(".lista-rock");
@@ -99,7 +105,7 @@ let tablaRock = document.querySelector(".tracksTable4");
 
 botonRock.onclick  = ()=> {
     music
-    .filter(music=>music.genres === "rock")
+    .filter((music)=>{music.genres === "rock"})
     console.log("Hola,esto funciona?")
     .map((music) => { 
         const row = document.createElement('tr'); 
@@ -110,7 +116,9 @@ botonRock.onclick  = ()=> {
         <td>${music.listeners} listeners</td>`;
         tablaRock.appendChild(row);
         listaRock.classList=("visible");
-    //genres.classList=("invisible");
+        tracks.classList=("invisible");
     })}
 
+
+//evento al cargar la página//
 window.addEventListener("load",traerMusica); 
