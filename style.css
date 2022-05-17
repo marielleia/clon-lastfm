@@ -44,7 +44,7 @@ main {
     gap: 2%;
 }
 
-#rock, #hiphop, #indie, #jazz, #reggae {
+.rock, .hiphop, .indie, .jazz, .reggae {
     width:50%;
     height: 50%;
     gap: 2%;
@@ -56,23 +56,23 @@ main {
     border-radius: 2%;
 }
 
-#img_rock, #img_hiphop, #img_indie, #img_jazz, #img_reggae {
+.img_rock, .img_hiphop, .img_indie, .img_jazz, .img_reggae {
     height: auto;
     width: 100%;
 }
 /*filtros*/
-#img_rock {filter:sepia(100%);}
-#img_hiphop {filter:contrast(180%);}
-#img_indie {filter:grayscale(50%);}
-#img_jazz {filter:hue-rotate(180deg);}
-#img_reggae {filter: saturate(50%);}
+.img_rock {filter:sepia(100%);}
+.img_hiphop {filter:contrast(180%);}
+.img_indie {filter:grayscale(50%);}
+.img_jazz {filter:hue-rotate(180deg);}
+.img_reggae {filter: saturate(50%);}
 
 h3:hover {
     color: #f2f2f2;
     text-decoration: underline;
 }
 
-#img_rock:hover, #img_hiphop:hover, #img_indie:hover, #img_jazz:hover, #img_reggae:hover {
+.img_rock:hover, .img_hiphop:hover, .img_indie:hover, .img_jazz:hover, .img_reggae:hover {
 filter: grayscale(1) brightness(40%);
 }
 
@@ -93,7 +93,7 @@ transform: translate(-50%, -50%);
     gap: 3%;
 }
 
-#btn-overview, #btn-top10, #btn-biggest {
+.btn-overview, .btn-top10, .btn-biggest {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 0.8em;
     border-style: none;
@@ -103,7 +103,7 @@ transform: translate(-50%, -50%);
     padding: 2%;
 }
 
-#btn-overview:hover, #btn-top10:hover, #btn-biggest:hover {
+.btn-overview:hover, .btn-top10:hover, .btn-biggest:hover {
     color: #f40a68;
 }
 

@@ -21,65 +21,65 @@
     <main>
         <section class="lista-menu">
 
-            <div id="rock">
-                <img id="img_rock" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg" alt="foto-rock">
-                <h3 id="title_rock">rock</h3>
+            <div class="rock">
+                <img class="img_rock" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg" alt="foto-rock">
+                <h3 class="title_rock">rock</h3>
             </div>
 
-            <div id="hiphop">
-                <img id="img_hiphop" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg"
+            <div class="hiphop">
+                <img class="img_hiphop" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg"
                 alt="foto-hiphop">
-                <h3 id="title_hiphop">hip-hop</h3>
+                <h3 class="title_hiphop">hip-hop</h3>
             </div>
 
-            <div id="indie">
-                <img id="img_indie"src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg" alt="foto-indie">
-                <h3 id="title_indie">indie</h3>
+            <div class="indie">
+                <img class="img_indie"src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg" alt="foto-indie">
+                <h3 class="title_indie">indie</h3>
             </div>
 
-            <div id="jazz">
-                <img id="img_jazz" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg" alt="foto-jazz">
-                <h3 id="title_jazz">jazz</h3>
+            <div class="jazz">
+                <img class="img_jazz" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg" alt="foto-jazz">
+                <h3 class="title_jazz">jazz</h3>
             </div>
 
-            <div id="reggae">
-                <img id="img_reggae" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg" alt="foto-reggae">
-                <h3 id="title_reggae">reggae</h3>
+            <div class="reggae">
+                <img class="img_reggae" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg" alt="foto-reggae">
+                <h3 class="title_reggae">reggae</h3>
             </div>
 
         </section>
        
         <section class="lista-opciones">
-                <button id="btn-overview"><h2>Overview</h2></button>
-                <button id="btn-top10"><h2>Top 10 Listened</h2></button>
-                <button id="btn-biggest"><h2>The Biggest</h2></button>
+                <button class="btn-overview"><h2>Overview</h2></button>
+                <button class="btn-top10"><h2>Top 10 Listened</h2></button>
+                <button class="btn-biggest"><h2>The Biggest</h2></button>
         </section>
     </main>
 </header>
 
 <!--------------------TRACK DE CANCIONES------------>
 <section class="tracks">
-<section class="lista-overview">
-    <h2 id="subtituloO">Overview</h2>
+    <section class="lista-overview">
+        <h2 class="subtituloO">Overview</h2>
+            <table>
+                <tbody class= "tracksTable1"></tbody>
+            </table>
+    </section>
+
+    <section class="lista-top10">
+        <h2 class="subtitulo10">Top 10 Listened</h2>
         <table>
-            <tbody class= "tracksTable1"></tbody>
+            <tbody class= "tracksTable2"></tbody>
         </table>
-</section>
+    </section>
 
-<section class="lista-top10">
-    <h2 id="subtitulo10">Top 10 Listened</h2>
-    <table>
-        <tbody class= "tracksTable2"></tbody>
-    </table>
-</section>
+    <section class="lista-biggest">
+        <h2 class="subtituloB">The Biggest</h2>
+        <table>
+            <tbody class= "tracksTable3"></tbody>
+        </table>
 
-<section class="lista-biggest">
-    <h2 id="subtituloB">The Biggest</h2>
-    <table>
-        <tbody class= "tracksTable3"></tbody>
-    </table>
-
-</section>
+    </section>
 </section>
 
 <!--------------------TRACK DE GENEROS------------> 
@@ -87,40 +87,40 @@
 <section class="generos">
 
     <section class="lista-rock">
-        <h2 id="subtitle_rock">Rock List</h2>
+        <h2 class="subtitle_rock">Rock List</h2>
         <table>
             <tbody class= "tracksTable4"></tbody>
         </table>
     </section>  
 
     <section class="lista-hiphop">
-        <h2 id="subtitle_hiphop">Hip-hop List</h2>
+        <h2 class="subtitle_hiphop">Hip-hop List</h2>
         <table>
             <tbody class= "tracksTable5"></tbody>
         </table>
     </section>  
 
     <section class="lista-indie">
-        <h2 id="subtitle_indie">Indie List</h2>
+        <h2 class="subtitle_indie">Indie List</h2>
         <table>
             <tbody class= "tracksTable6"></tbody>
         </table>
     </section>  
 
     <section class="lista-jazz">
-        <h2 id="subtitle-jazz">Jazz List</h2>
+        <h2 class="subtitle-jazz">Jazz List</h2>
         <table>
             <tbody class= "tracksTable7"></tbody>
         </table>
     </section>  
 
     <section class="lista-reggae">
-        <h2 id="subtitle-reggae">Reggae List</h2>
+        <h2 class="subtitle-reggae">Reggae List</h2>
         <table>
             <tbody class= "tracksTable8"></tbody>
         </table>
     </section>
-    
+
 </section>
 
     <script src="script.js"></script>
