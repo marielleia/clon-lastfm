@@ -1,26 +1,26 @@
-//Llamamos a los elementos del HTML//
+//---------------Llamamos a los elementos del HTML--------------------------------------//
 
 let genres = document.querySelector(".generos");
 let tracks = document.querySelector(".tracks");
 
 let music = [];
 
-//-------------------------OVERVIEW-------------------------//
-
+//--------------------------------------OVERVIEW--------------------------------------//
 function traerMusica() {
 // Aquí llamamos al json con fetch//    
     fetch('music.json')
     .then(response => response.json())
+
 // y lo mostramos en una tabla donde se ve el nombre, artista y nº listeners de todas las canciones//    
     .then ((result) => {
-        music = result.sort((a,b) => b.listeners-a.listeners);  //sort: ordena las mas escuchadas a menos escuchadas//
-        music.map((music) => { 
+        music = result.sort((a,b) => b.listeners-a.listeners);
+        music.map((song) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
             ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
+            <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+            <td><a href=${song.url}><b>${song.name}</b></a></td>
+            <td>${song.listeners} listeners</td>`;
             tablaOverview.appendChild(row);
             //aqui hacemos que los elementos/secciones no se vean cuando cargamos la página//
         listaTop10.classList=("invisible");
@@ -29,7 +29,7 @@ function traerMusica() {
     });
  })};
  
- //-----------------------OVERVIEW-----------------------------------//
+ //----------------------------------------OVERVIEW-------------------------------------------//
  //Aqui hacemos que al clicar el boton Overview solamente sea visible la lista Overview//
  
  let btnOverview = document.querySelector(".btn-overview");
@@ -54,13 +54,13 @@ let h2Top10 = document.querySelector(".subtitulo10");
 btnTop10.onclick = ()=> {
     music
     .slice(0,10)
-    .map((music) => { 
+    .map((song) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
             ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
+            <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+            <td><a href=${song.url}><b>${song.name}</b></a></td>
+            <td>${song.listeners} listeners</td>`;
         tablaTop10.appendChild(row);
     listaTop10.classList=("visible");
     listaOverview.classList=("invisible");
@@ -78,14 +78,15 @@ btnTop10.onclick = ()=> {
 
 btnBiggest.onclick  = ()=> {
         music
-        .filter(music=>music.artist.name === "Radiohead")
-        .map((music) => { 
+        .filter(song=>song.artist.name === "") //FOR para sumar todos listeners del mismo grupo
+
+        .map((song) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
                 ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-                <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-                <td><a href=${music.url}><b>${music.name}</b></a></td>
-                <td>${music.listeners} listeners</td>`;
+                <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+                <td><a href=${song.url}><b>${song.name}</b></a></td>
+                <td>${song.listeners} listeners</td>`;
             tablaBiggest.appendChild(row); 
             listaTop10.classList=("invisible");
             listaOverview.classList=("invisible");
@@ -96,70 +97,69 @@ btnBiggest.onclick  = ()=> {
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
 
-/*let rock = document.querySelector(".rock");
+let rock = document.querySelector(".rock");
 let botonRock = document.querySelector(".title_rock");
 let listaRock = document.querySelector(".lista-rock");
 let tablaRock = document.querySelector(".tracksTable4");
 
 botonRock.onclick  = ()=> {
     music
-    .filter(music=>music.genres === includes("rock"))
-    .map((music) => { 
-        const row = document.createElement('tr');
-        row.innerHTML += 
-            ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
-            tablaRock.appendChild(row);
-            console.log(music)
-            //document.querySelector(".lista-rock").innerHTML= "Holaaaa";
-        listaRock.classList=("visible");
-        tracks.classList=("invisible");
-        listaHiphop.classList=("invisible");
-        listaIndie.classList=("invisible");
-        listaJazz.classList=("invisible");
-        listaReggae.classList=("invisible");
-})};
-
-//-------------------HIPHOP ------------------------------//
- //Aqui hacemos que al clicar el boton hiphop solamente sea visible la lista HIPHOP y se oculten las demás secciones.//
-
-let hiphop = document.querySelector(".hiphop");
-let botonHiphop = document.querySelector(".title_hiphop");
-let listaHiphop = document.querySelector(".lista-hiphop");
-let tablaHiphop = document.querySelector(".tracksTable5");
-
-botonHiphop.onclick  = ()=> {
-    music
-    .filter(music => music[0].genres[1] === ("Hip-Hop"))
-    music.map((music) => { 
+    .filter(song=>song.genres).includes("rock")
+    .map((song) => {
         const row = document.createElement('tr'); 
         row.innerHTML += 
         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-        <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-        <td><a href=${music.url}><b>${music.name}</b></a></td>
-        <td>${music.listeners} listeners</td>`;
-        tablaHiphop.appendChild(row);
-        listaHiphop.classList=("visible");
+        <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+        <td><a href=${song.url}><b>${song.name}</b></a></td>
+        <td>${song.listeners} listeners</td>`;
+        tablaRock.appendChild(row);   
+        listaRock.classList=("visible");
         tracks.classList=("invisible");
-        listaRock.classList=("invisible");
-        listaIndie.classList=("invisible");
-        listaJazz.classList=("invisible");
-        listaReggae.classList=("invisible");
+        list
 })};
 
-//-------------------INDIE ------------------------------//
- //Aqui hacemos que al clicar el boton INDIE solamente sea visible la lista INDIE y se oculten las demás secciones.//
+    
+    // if genres includes 
+// o
+// switch
 
+//-------------------HIPHOP ------------------------------//
+ //Aqui hacemos que al clicar el boton HIPHOP solamente sea visible la lista HIPHOP y se oculten las demás secciones.//
+ 
+ let hiphop = document.querySelector(".hiphop");
+ let botonHiphop = document.querySelector(".title_hiphop");
+ let listaHiphop = document.querySelector(".lista-hiphop");
+ let tablaHiphop = document.querySelector(".tracksTable5");
+ 
+ botonHiphop.onclick  = ()=> {
+     music
+     .filter(song=>song.genres == "Hip-Hop")
+     
+     music.map((song) => { 
+         const row = document.createElement('tr'); 
+         row.innerHTML += 
+         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+         <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+         <td><a href=${song.url}><b>${song.name}</b></a></td>
+         <td>${song.listeners} listeners</td>`;
+         tablaHiphop.appendChild(row);
+         listaHiphop.classList=("visible");
+         tracks.classList=("invisible");
+})};
+
+/*
+//-------------------INDIE ------------------------------//
+ //Aqui hacemos que al clicar el boton Indie solamente sea visible la lista Indie y se oculten las demás secciones.//
+ 
  let indie = document.querySelector(".indie");
  let botonIndie = document.querySelector(".title_indie");
  let listaIndie = document.querySelector(".lista-indie");
  let tablaIndie = document.querySelector(".tracksTable6");
  
- botonIndie.onclick  = ()=> {
+ indie.onclick  = ()=> {
      music
-     .filter(music=>music.genres==="indie")
+     .filter(music=>music.genres == "indie")
+     
      music.map((music) => { 
          const row = document.createElement('tr'); 
          row.innerHTML += 
@@ -168,67 +168,10 @@ botonHiphop.onclick  = ()=> {
          <td><a href=${music.url}><b>${music.name}</b></a></td>
          <td>${music.listeners} listeners</td>`;
          tablaIndie.appendChild(row);
+        
          listaIndie.classList=("visible");
          tracks.classList=("invisible");
-         listaHiphop.classList=("invisible");
-         listaRock.classList=("invisible");
-         listaJazz.classList=("invisible");
-         listaReggae.classList=("invisible");
- })};
+     })};*/
 
- //-------------------JAZZ ------------------------------//
- //Aqui hacemos que al clicar el boton JAZZ solamente sea visible la lista JAZZ y se oculten las demás secciones.//
-
- let jazz = document.querySelector(".jazz");
- let botonJazz = document.querySelector(".title_jazz");
- let listaJazz = document.querySelector(".lista-jazz");
- let tablaJazz = document.querySelector(".tracksTable7");
- 
- botonJazz.onclick  = ()=> {
-     music
-     .filter(music=>music.genres==="jazz")
-     music.map((music) => { 
-         const row = document.createElement('tr'); 
-         row.innerHTML += 
-         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-         <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-         <td><a href=${music.url}><b>${music.name}</b></a></td>
-         <td>${music.listeners} listeners</td>`;
-         tablaJazz.appendChild(row);
-         listaJazz.classList=("visible");
-         tracks.classList=("invisible");
-         listaHiphop.classList=("invisible");
-         listaRock.classList=("invisible");
-         listaIndie.classList=("invisible");
-         listaReggae.classList=("invisible");
- })};
-
-  //-------------------REGGAE ------------------------------//
- //Aqui hacemos que al clicar el boton REGGAE solamente sea visible la lista REGGAE y se oculten las demás secciones.//
-
- let reggae = document.querySelector(".reggae");
- let botonReggae = document.querySelector(".title_reggae");
- let listaReggae = document.querySelector(".lista-reggae");
- let tablaReggae = document.querySelector(".tracksTable8");
- 
- botonReggae.onclick  = ()=> {
-     music
-     .filter(music=>music.genres==="reggae")
-     music.map((music) => { 
-         const row = document.createElement('tr'); 
-         row.innerHTML += 
-         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-         <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-         <td><a href=${music.url}><b>${music.name}</b></a></td>
-         <td>${music.listeners} listeners</td>`;
-         tablaReggae.appendChild(row);
-         listaReggae.classList=("visible");
-         tracks.classList=("invisible");
-         listaHiphop.classList=("invisible");
-         listaRock.classList=("invisible");
-         listaIndie.classList=("invisible");
-         listaJazz.classList=("invisible");
- })};*/
-
-//evento al cargar la página//
-window.addEventListener("load",traerMusica)
+     //evento al cargar la página//
+     window.addEventListener("load",traerMusica);
