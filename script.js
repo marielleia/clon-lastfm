@@ -14,7 +14,6 @@ function traerMusica() {
 // y lo mostramos en una tabla donde se ve el nombre, artista y nº listeners de todas las canciones//    
     .then ((result) => {
         music = result.sort((a,b) => b.listeners-a.listeners);  //sort: ordena las mas escuchadas a menos escuchadas//
-        //console.log("hola, esta funcion funciona?")
         music.map((music) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
@@ -54,7 +53,7 @@ let h2Top10 = document.querySelector(".subtitulo10");
 
 btnTop10.onclick = ()=> {
     music
-    .slice(0,9)
+    .slice(0,10)
     .map((music) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
@@ -97,30 +96,30 @@ btnBiggest.onclick  = ()=> {
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
 
-let rock = document.querySelector(".rock");
+/*let rock = document.querySelector(".rock");
 let botonRock = document.querySelector(".title_rock");
 let listaRock = document.querySelector(".lista-rock");
 let tablaRock = document.querySelector(".tracksTable4");
 
 botonRock.onclick  = ()=> {
     music
-    .filter(music=>music.genres === "rock")
-    console.log(music)
-    music.map((music) => { 
-        const row = document.createElement('tr'); 
+    .filter(music=>music.genres === includes("rock"))
+    .map((music) => { 
+        const row = document.createElement('tr');
         row.innerHTML += 
             ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
             <td><a href=${music.artist.url}>${music.artist.name}</a></td>
             <td><a href=${music.url}><b>${music.name}</b></a></td>
             <td>${music.listeners} listeners</td>`;
             tablaRock.appendChild(row);
+            console.log(music)
+            //document.querySelector(".lista-rock").innerHTML= "Holaaaa";
         listaRock.classList=("visible");
         tracks.classList=("invisible");
         listaHiphop.classList=("invisible");
         listaIndie.classList=("invisible");
         listaJazz.classList=("invisible");
         listaReggae.classList=("invisible");
-
 })};
 
 //-------------------HIPHOP ------------------------------//
@@ -133,7 +132,7 @@ let tablaHiphop = document.querySelector(".tracksTable5");
 
 botonHiphop.onclick  = ()=> {
     music
-    .filter(music=>music.genres === ("Hip-Hop"))
+    .filter(music => music[0].genres[1] === ("Hip-Hop"))
     music.map((music) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
@@ -229,7 +228,7 @@ botonHiphop.onclick  = ()=> {
          listaRock.classList=("invisible");
          listaIndie.classList=("invisible");
          listaJazz.classList=("invisible");
- })};
+ })};*/
 
 //evento al cargar la página//
-window.addEventListener("load",traerMusica);
+window.addEventListener("load",traerMusica)
