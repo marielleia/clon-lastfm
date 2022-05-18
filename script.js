@@ -99,63 +99,36 @@ btnBiggest.onclick  = ()=> {
         });}
     
         
-//-------------------ROCK ------------------------------//
+//-------------------GENRES ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
 
-let rock = document.querySelector(".rock");
-let botonRock = document.querySelector(".title_rock");
-let listaRock = document.querySelector(".lista-rock");
-let tablaRock = document.querySelector(".tracksTable4");
-
-rock.onclick  = ()=> {
-    music
-    .filter(song=>song.genres === "rock")
-    console.log ("hola, esto funciona?")
-    music.map((song) => { 
-        const row = document.createElement('tr'); 
-        row.innerHTML += 
-        ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-        <td><a href=${song.artist.url}>${song.artist.name}</a></td>
-        <td><a href=${song.url}><b>${song.name}</b></a></td>
-        <td>${song.listeners} listeners</td>`;
-        tablaRock.appendChild(row);
-       
-        listaRock.classList=("visible");
-        tracks.classList=("invisible");
-    })};
-
-//evento al cargar la página//
-window.addEventListener("load",traerMusica); 
-
-// if genres includes 
-// o
-// switch
-
-
-//-------------------INDIE ------------------------------//
- //Aqui hacemos que al clicar el boton Indie solamente sea visible la lista Indie y se oculten las demás secciones.//
-
- let indie = document.querySelector(".indie");
- let botonIndie = document.querySelector(".title_indie");
- let listaIndie = document.querySelector(".lista-indie");
- let tablaIndie = document.querySelector(".tracksTable6");
+ let rock = ("tracksTable4");
+ let hiphop = ("tracksTable5");
+ let indie = ("tracksTable6");
+ let jazz = ("tracksTable7");
+ let reggae = ("tracksTable8");
  
- indie.onclick  = ()=> {
-     music
-     .filter(music=>music.genres == "indie")
-     
-     music.map((music) => { 
-         const row = document.createElement('tr'); 
-         row.innerHTML += 
-         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-         <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-         <td><a href=${music.url}><b>${music.name}</b></a></td>
-         <td>${music.listeners} listeners</td>`;
-         tablaIndie.appendChild(row);
-        
-         listaIndie.classList=("visible");
-         tracks.classList=("invisible");
-     })};
-     console.log(music)
+ 
+ // json - genresofsongs ->  artista - nombresong = filtrar
+
+ // song.artistname.songname
+ 
+ switch (expresión) {
+     case valor1:
+       //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+       [break;]
+     case valor2:
+       //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+       [break;]
+     ...
+     case valorN:
+       //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+       [break;]
+     default:
+       //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+       [break;]
+   }
+ 
  //evento al cargar la página//
  window.addEventListener("load",traerMusica); 
+ 
