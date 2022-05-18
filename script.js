@@ -11,18 +11,20 @@ function traerMusica() {
 // Aquí llamamos al json con fetch//    
     fetch('music.json')
     .then(response => response.json())
+    
+    
 // y lo mostramos en una tabla donde se ve el nombre, artista y nº listeners de todas las canciones//    
     .then ((result) => {
         music = result.sort((a,b) => b.listeners-a.listeners);  
-        console.log("we enter the fetch music func")
-        console.log(music)
-        music.map((music) => { 
+        
+        
+        music.map((song) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
             ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
+            <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+            <td><a href=${song.url}><b>${song.name}</b></a></td>
+            <td>${song.listeners} listeners</td>`;
             tablaOverview.appendChild(row);
             //aqui hacemos que los elementos/secciones no se vean cuando cargamos la página//
         listaTop10.classList=("invisible");
@@ -55,14 +57,14 @@ let h2Top10 = document.querySelector(".subtitulo10");
 
 btnTop10.onclick = ()=> {
     music
-    .slice(0,9)
-    .map((music) => { 
+    .slice(0,10)
+    .map((song) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
             ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-            <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-            <td><a href=${music.url}><b>${music.name}</b></a></td>
-            <td>${music.listeners} listeners</td>`;
+            <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+            <td><a href=${song.url}><b>${song.name}</b></a></td>
+            <td>${song.listeners} listeners</td>`;
         tablaTop10.appendChild(row);
     listaTop10.classList=("visible");
     listaOverview.classList=("invisible");
@@ -80,14 +82,15 @@ btnTop10.onclick = ()=> {
 
 btnBiggest.onclick  = ()=> {
         music
-        .filter(music=>music.artist.name === "Radiohead")
-        .map((music) => { 
+        .filter(song=>song.artist.name === "") //FOR para sumar todos listeners del mismo grupo
+
+        .map((song) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
                 ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-                <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-                <td><a href=${music.url}><b>${music.name}</b></a></td>
-                <td>${music.listeners} listeners</td>`;
+                <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+                <td><a href=${song.url}><b>${song.name}</b></a></td>
+                <td>${song.listeners} listeners</td>`;
             tablaBiggest.appendChild(row); 
             listaTop10.classList=("invisible");
             listaOverview.classList=("invisible");
@@ -106,19 +109,53 @@ let tablaRock = document.querySelector(".tracksTable4");
 
 rock.onclick  = ()=> {
     music
-    //.filter(music=>music.genres === "rock")
+    .filter(song=>song.genres === "rock")
     console.log ("hola, esto funciona?")
-    music.map((music) => { 
+    music.map((song) => { 
         const row = document.createElement('tr'); 
         row.innerHTML += 
         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
-        <td><a href=${music.artist.url}>${music.artist.name}</a></td>
-        <td><a href=${music.url}><b>${music.name}</b></a></td>
-        <td>${music.listeners} listeners</td>`;
+        <td><a href=${song.artist.url}>${song.artist.name}</a></td>
+        <td><a href=${song.url}><b>${song.name}</b></a></td>
+        <td>${song.listeners} listeners</td>`;
         tablaRock.appendChild(row);
-       // listaRock.classList=("visible");
-       // tracks.classList=("invisible");
+       
+        listaRock.classList=("visible");
+        tracks.classList=("invisible");
     })};
 
 //evento al cargar la página//
 window.addEventListener("load",traerMusica); 
+
+// if genres includes 
+// o
+// switch
+
+
+//-------------------INDIE ------------------------------//
+ //Aqui hacemos que al clicar el boton Indie solamente sea visible la lista Indie y se oculten las demás secciones.//
+
+ let indie = document.querySelector(".indie");
+ let botonIndie = document.querySelector(".title_indie");
+ let listaIndie = document.querySelector(".lista-indie");
+ let tablaIndie = document.querySelector(".tracksTable6");
+ 
+ indie.onclick  = ()=> {
+     music
+     .filter(music=>music.genres == "indie")
+     
+     music.map((music) => { 
+         const row = document.createElement('tr'); 
+         row.innerHTML += 
+         ` <td><img id="icon" src="https://cdn-icons-png.flaticon.com/512/5018/5018505.png"></td>
+         <td><a href=${music.artist.url}>${music.artist.name}</a></td>
+         <td><a href=${music.url}><b>${music.name}</b></a></td>
+         <td>${music.listeners} listeners</td>`;
+         tablaIndie.appendChild(row);
+        
+         listaIndie.classList=("visible");
+         tracks.classList=("invisible");
+     })};
+     console.log(music)
+ //evento al cargar la página//
+ window.addEventListener("load",traerMusica); 
