@@ -93,6 +93,7 @@ btnBiggest.onclick  = ()=> {
             genres.classList=("invisible");
 });}
 
+console.log ("Hola, sale la lista de música?");
 
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
