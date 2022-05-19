@@ -93,10 +93,10 @@ btnBiggest.onclick  = ()=> {
             listaBiggest.classList=("visible");
             genres.classList=("invisible");
 });}
-
+/*
 export const probandoTest = (message) => "Hola, " + message;
     
-    console.log( probandoTest("Hola, sale la lista de música?"));
+    console.log( probandoTest("Hola, sale la lista de música?"));*/
 
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
