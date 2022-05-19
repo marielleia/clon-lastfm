@@ -4,6 +4,8 @@
 let genres = document.querySelector(".generos");
 let tracks = document.querySelector(".tracks");
 
+//Llamamos a más elementos en cada sección//
+
 let music = [];
 
 //--------------------------------------OVERVIEW--------------------------------------//
@@ -69,7 +71,7 @@ btnTop10.onclick = ()=> {
     genres.classList=("invisible");
 });}
 
-//------------------THE BIGGEST-------------------------------//
+//------------------THE BIGGEST-------------------------------// NO HAY USER STORY
  //Aqui hacemos que al clicar el boton The biggest solamente sea visible la lista The biggest y se oculten las demás secciones.//
 
  let btnBiggest = document.querySelector(".btn-biggest");
@@ -79,7 +81,7 @@ btnTop10.onclick = ()=> {
 
 btnBiggest.onclick  = ()=> {
         music
-        .filter(song=>song.artist.name === "Radiohead") //FOR para sumar todos listeners del mismo grupo
+        .filter(song=>song.artist.name === "Radiohead")
         .map((song) => { 
             const row = document.createElement('tr'); 
             row.innerHTML += 
