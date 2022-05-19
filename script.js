@@ -1,3 +1,4 @@
+
 //---------------Llamamos a los elementos del HTML--------------------------------------//
 
 let genres = document.querySelector(".generos");
@@ -93,7 +94,9 @@ btnBiggest.onclick  = ()=> {
             genres.classList=("invisible");
 });}
 
-console.log ("Hola, sale la lista de música?");
+export const probandoTest = (message) => "Hola, " + message;
+    
+    console.log( probandoTest("Hola, sale la lista de música?"));
 
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
