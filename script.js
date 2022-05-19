@@ -236,5 +236,61 @@ botonRock.onclick  = ()=> {
          listaIndie.classList=("invisible");
 })};
 
+// -----------------------------------------SWITCH ------------------------------------------------------------------------------
+/*let generos = "genres"
+ 
+ let rock = document.querySelector(".rock");
+ let botonRock = document.querySelector(".title_rock");
+ let listaRock = document.querySelector(".lista-rock");
+ let tablaRock = document.querySelector(".tracksTable4");
+
+ let hiphop = document.querySelector(".hiphop");
+ let botonHiphop = document.querySelector(".title_hiphop");
+ let listaHiphop = document.querySelector(".lista-hiphop");
+ let tablaHiphop = document.querySelector(".tracksTable5");
+
+ let indie = document.querySelector(".indie");
+ let botonIndie = document.querySelector(".title_indie");
+ let listaIndie = document.querySelector(".lista-indie");
+ let tablaIndie = document.querySelector(".tracksTable6");
+
+ let Jazz = document.querySelector(".jazz");
+ let botonJazz = document.querySelector(".title_jazz");
+ let listaJazz = document.querySelector(".lista-jazz");
+ let tablaJazz = document.querySelector(".tracksTable4");
+
+ let Reggae = document.querySelector(".reggae");
+ let botonReggae = document.querySelector(".title_reggae");
+ let listaReggae = document.querySelector(".lista-reggae");
+ let tablaReggae = document.querySelector(".tracksTable8");
+
+  .filter(song=>song.genres == "")
+
+ switch (expresión) {
+
+    case rock:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+      [".tracksTable4";]
+
+    case hiphop:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+      [".tracksTable5";]
+
+     case indie:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
+      [".tracksTable6";]
+      
+    case jazz:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+      [".tracksTable4";]
+    case reggae:
+      //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+      [".tracksTable8";]
+    default:
+      //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+      ["No entiendo"]
+  }
+*/
+
 //evento al cargar la página//
 window.addEventListener("load",traerMusica);
