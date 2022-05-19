@@ -98,7 +98,7 @@ btnBiggest.onclick  = ()=> {
 /*
 export const probandoTest = (message) => "Hola, " + message;
     
-    console.log( probandoTest("Hola, sale la lista de música?"));*/
+  //  console.log( probandoTest("Hola, sale la lista de música?"));*/
 
 //-------------------ROCK ------------------------------//
  //Aqui hacemos que al clicar el boton Rock solamente sea visible la lista Rock y se oculten las demás secciones.//
@@ -120,6 +120,7 @@ botonRock.onclick  = ()=> {
         <td><a href=${song.url}><b>${song.name}</b></a></td>
         <td>${song.listeners} listeners</td>`;
         tablaRock.appendChild(row);
+        
         listaRock.classList=("visible");
         tracks.classList=("invisible");
         listaHiphop.classList=("invisible");
@@ -148,6 +149,7 @@ botonRock.onclick  = ()=> {
          <td><a href=${song.url}><b>${song.name}</b></a></td>
          <td>${song.listeners} listeners</td>`;
          tablaHiphop.appendChild(row);
+
          listaHiphop.classList=("visible");
          tracks.classList=("invisible");
          listaRock.classList=("invisible");
@@ -175,6 +177,7 @@ botonRock.onclick  = ()=> {
          <td><a href=${song.url}><b>${song.name}</b></a></td>
          <td>${song.listeners} listeners</td>`;
          tablaIndie.appendChild(row);
+
          listaIndie.classList=("visible");
          tracks.classList=("invisible");
          listaHiphop.classList=("invisible");
@@ -203,6 +206,7 @@ botonRock.onclick  = ()=> {
          <td><a href=${song.url}><b>${song.name}</b></a></td>
          <td>${song.listeners} listeners</td>`;
          tablaJazz.appendChild(row);
+
          listaJazz.classList=("visible");
          tracks.classList=("visible");
          listaReggae.classList=("invisible");
@@ -230,6 +234,7 @@ botonRock.onclick  = ()=> {
          <td><a href=${song.url}><b>${song.name}</b></a></td>
          <td>${song.listeners} listeners</td>`;
          tablaReggae.appendChild(row);
+
          listaReggae.classList=("visible");
          tracks.classList=("invisible");
          listaRock.classList=("invisible");
