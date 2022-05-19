@@ -189,7 +189,7 @@ botonRock.onclick  = ()=> {
  let Jazz = document.querySelector(".jazz");
  let botonJazz = document.querySelector(".title_jazz");
  let listaJazz = document.querySelector(".lista-jazz");
- let tablaJazz = document.querySelector(".tracksTable4");
+ let tablaJazz = document.querySelector(".tracksTable7");
  
  botonJazz.onclick  = ()=> {
      music
@@ -284,7 +284,7 @@ botonRock.onclick  = ()=> {
       
     case jazz:
       //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-      [".tracksTable4";]
+      [".tracksTable7";]
     case reggae:
       //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
       [".tracksTable8";]
