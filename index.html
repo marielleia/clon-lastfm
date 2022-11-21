@@ -8,121 +8,74 @@
     <title>clon-last.fm</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<!-------------------------------ENCABEZADO----------------------------->
-<header>
-    <nav>
-<!----------------------------------LOGO-------------------------------->
-        <a href="https://www.last.fm/" target="_blank"><img id="logo" src="https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png" alt="logo-lastfm"></a>
-    </nav>
-    
+    <header>
 
-<!---------------------------CAJAS CON IMAGENES------------------------->
-    <main>
-        <section class="lista-menu">
+        <!----------------------------------LOGO-------------------------------->
+        <a href="https://www.last.fm/" target="_blank"><img id="logo"
+                src="https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png" alt="logo-lastfm"></a>
 
-            <div class="rock">
-                <img class="img_rock" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg" alt="foto-rock">
+    </header>
+    <!---------------------------CAJAS CON IMAGENES------------------------->
+    <section>
+        <nav id="genres">
+            <div id="rock" class="genre">
+                <img class="img_rock"
+                    src="https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg"
+                    alt="foto-rock">
                 <h3 class="title_rock">rock</h3>
             </div>
 
-            <div class="hiphop">
-                <img class="img_hiphop" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg"
-                alt="foto-hiphop">
+            <div id="hiphop" class="genre">
+                <img class="img_hiphop"
+                    src="https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg"
+                    alt="foto-hiphop">
                 <h3 class="title_hiphop">hip-hop</h3>
             </div>
 
-            <div class="indie">
-                <img class="img_indie"src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg" alt="foto-indie">
+            <div id="indie" class="genre">
+                <img class="img_indie"
+                    src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg"
+                    alt="foto-indie">
                 <h3 class="title_indie">indie</h3>
             </div>
 
-            <div class="jazz">
-                <img class="img_jazz" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg" alt="foto-jazz">
+            <div id="jazz" class="genre">
+                <img class="img_jazz"
+                    src="https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg"
+                    alt="foto-jazz">
                 <h3 class="title_jazz">jazz</h3>
             </div>
 
-            <div class="reggae">
-                <img class="img_reggae" src="https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg" alt="foto-reggae">
+            <div id="reggae" class="genre">
+                <img class="img_reggae"
+                    src="https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg"
+                    alt="foto-reggae">
                 <h3 class="title_reggae">reggae</h3>
             </div>
+        </nav>
 
-        </section>
-       
-        <section class="lista-opciones">
-                <button class="btn-overview"><h2>Overview</h2></button>
-                <button class="btn-top10"><h2>Top 10 Listened</h2></button>
-                <button class="btn-biggest"><h2>The Biggest</h2></button>
-        </section>
+        <nav id="options">
+            <button id="btn-overview">
+                <h2>Overview</h2>
+            </button>
+            <button id="btn-top10">
+                <h2>Top 10 Listened</h2>
+            </button>
+            <button id="btn-biggest">
+                <h2>The Biggest</h2>
+            </button>
+        </nav>
+    </section>
+
+    <main class="list">
+        <h1 id="title"></h1>
+        <table id="musicList">
+        </table>
     </main>
-</header>
-
-<!--------------------TRACK DE CANCIONES------------>
-<section class="tracks">
-    <section class="lista-overview">
-        <h2 class="subtituloO">Overview</h2>
-            <table>
-                <tbody class= "tracksTable1"></tbody>
-            </table>
-    </section>
-
-    <section class="lista-top10">
-        <h2 class="subtitulo10">Top 10 Listened</h2>
-        <table>
-            <tbody class= "tracksTable2"></tbody>
-        </table>
-    </section>
-
-    <section class="lista-biggest">
-        <h2 class="subtituloB">The Biggest</h2>
-        <table>
-            <tbody class= "tracksTable3"></tbody>
-        </table>
-
-    </section>
-</section>
-
-<!--------------------TRACK DE GENEROS------------> 
-
-<section class="generos">
-
-    <section class="lista-rock">
-        <h2 class="subtitle_rock">Rock List</h2>
-        <table>
-            <tbody class= "tracksTable4"></tbody>
-        </table>
-    </section>  
-
-    <section class="lista-hiphop">
-        <h2 class="subtitle_hiphop">Hip-hop List</h2>
-        <table>
-            <tbody class= "tracksTable5"></tbody>
-        </table>
-    </section>  
-
-    <section class="lista-indie">
-        <h2 class="subtitle_indie">Indie List</h2>
-        <table>
-            <tbody class= "tracksTable6"></tbody>
-        </table>
-    </section>  
-
-    <section class="lista-jazz">
-        <h2 class="subtitle-jazz">Jazz List</h2>
-        <table>
-            <tbody class= "tracksTable7"></tbody>
-        </table>
-    </section>  
-
-    <section class="lista-reggae">
-        <h2 class="subtitle-reggae">Reggae List</h2>
-        <table>
-            <tbody class= "tracksTable8"></tbody>
-        </table>
-    </section>
-
-</section>
 
     <script type="module" src="script.js"></script>
 </body>
+
 </html>

@@ -1,19 +1,16 @@
 * {
-margin: 0%;
-padding: 0%;
-text-decoration: none;
-box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-html{
-    height: auto;
-    width: auto;
-    margin: auto;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+html {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 /* --------------------------ENCABEZADO-----------------------------*/
-nav {
+header {
     background-color: #222;
     height: 10%;
     display: flex;
@@ -27,188 +24,142 @@ nav {
 }
 
 /*----------------------CAJAS CON IMAGENES-------------------------*/
-main {
+section,
+nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
 }
 
-.lista-menu {
-    width: 50%;
+section {
+    margin: 5% 0;
+}
+
+#genres {
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 2%;
-}
-
-.rock, .hiphop, .indie, .jazz, .reggae {
-    width:50%;
-    height: 50%;
-    gap: 2%;
     color: white;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    margin: 2% auto;
-    border-radius: 2%;
 }
 
-.img_rock, .img_hiphop, .img_indie, .img_jazz, .img_reggae {
-    height: auto;
+.genre {
+    position: relative;
+}
+
+.img_rock,
+.img_hiphop,
+.img_indie,
+.img_jazz,
+.img_reggae {
     width: 100%;
+    border-radius: 50%;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 /*filtros*/
-.img_rock {filter:sepia(100%);}
-.img_hiphop {filter:contrast(180%);}
-.img_indie {filter:grayscale(50%);}
-.img_jazz {filter:hue-rotate(180deg);}
-.img_reggae {filter: saturate(50%);}
+.img_rock {
+    filter: sepia(100%);
+}
+.img_hiphop {
+    filter: contrast(180%);
+}
+.img_indie {
+    filter: grayscale(50%);
+}
+.img_jazz {
+    filter: hue-rotate(180deg);
+}
+.img_reggae {
+    filter: saturate(50%);
+}
 
 h3:hover {
     color: #f2f2f2;
     text-decoration: underline;
 }
 
-.img_rock:hover, .img_hiphop:hover, .img_indie:hover, .img_jazz:hover, .img_reggae:hover {
-filter: grayscale(1) brightness(40%);
+.img_rock:hover,
+.img_hiphop:hover,
+.img_indie:hover,
+.img_jazz:hover,
+.img_reggae:hover {
+    filter: grayscale(1) brightness(30%);
 }
 
 div h3 {
-font-size: 1em;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*----------------------------LISTA OPCIONES-----------------------*/
-.lista-opciones{
+#options {
     width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 3%;
+
 }
 
-.btn-overview, .btn-top10, .btn-biggest {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.8em;
+#btn-overview,
+#btn-top10,
+#btn-biggest {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 80%;
     border-style: none;
     background-color: #fff;
     color: #222;
     text-align: center;
     padding: 2%;
+    margin-top: 10%;
 }
 
-.btn-overview:hover, .btn-top10:hover, .btn-biggest:hover {
-    color: #f40a68;
+#btn-overview:hover,
+#btn-top10:hover,
+#btn-biggest:hover {
+    color: #f40aa6;
 }
 
 /*------------------------TRACK DE CANCIONES----------------------*/
-.lista-overview {
-    background-color: #fff;
-    height: 60%;
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3%;
 }
 
-h2 {
+h1 {
     padding: 2%;
 }
+
 table {
-    width: 100%;
-
+    width: 95%;
 }
-tr:nth-child(odd) { 
-    background-color: #f7c0d9;
-} 
+tr:nth-child(odd) {
+    background-color: #d3e2bd67;
+}
 
-tr { 
+tr {
     font-size: 0.85em;
-    gap:unset;
 }
 
-td:nth-child(1) {
-    width: 10%;
-    text-align: center;
-}
-
-td:nth-child(2) {
-    width: 20%;
-    padding-left: 0.5em;
-}
-
-td:nth-child(3) {
-    width: 35%;
-    padding-left: 0.5em;
-}
-
-td:nth-child(4) {
-    width: 35%;
-    text-align:end;
-    padding-right: 2em;
-}
-
-#icon {
-    width: 2em;
-    height: 2em;
-}
-
-a:link{
-    color: #222; 
-}
-
-.music.artist.name {
-text-align: right;
-}
-
-.music.name {
+td {
+    width: auto;
+    padding: 0 1em;
     text-align: start;
 }
 
-/* Colores:
-   --color-primary:  #222
-   --color-secondary: rgba(110, 69, 51, 1);
-   --color-focus-menu: #B90000;
-   --color-background: #fff;
-   --color-list-odd: #f2f2f2;
-
-*/
-
-/* Imágenes:
-logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
-rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
-hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
-indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
-jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
-reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
-*/
-
-/* Filtros:
-
-rock:   sepia(90%);
-hip-hop:contrast(200%);
-indie:  grayscale(50%);
-jazz:   hue-rotate(90deg);
-reggae: saturate(10%);
-
-*/
-
-/* Fuente:
-    font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
-
-*/
-
-/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
- */
-
-/*MODO VISIBLE*/
-.visible {
-display:block;
+#icon {
+    height: 2em;
 }
 
-/*MODO INVISIBLE*/
-.invisible {
-display: none;
+a:link {
+    color: #222;
 }
