@@ -1,11 +1,14 @@
 {
   "name": "clon-lastfm",
+  "homepage": "https://marielleia.github.io/clon-lastfm/",
   "version": "1.0.0",
   "description": "Generaremos un fake de la web  **[last.fm](https://www.last.fm/home)**, web de playlists de canciones. El resultado se deberá parecer al que se muestra a continuación:",
   "main": "script.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -16,10 +19,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/marielleia/clon-lastfm/issues"
-  },
-  "homepage": "https://github.com/marielleia/clon-lastfm#readme",
-  "devDependencies": {
-    "jest": "^28.1.0"
   },
   "dependencies": {
     "ansi-escapes": "^4.3.2",
